@@ -13,13 +13,10 @@ app.controller("movieConteroller",function($scope, $http){
 
 
 });
-app.config(function($stateProvider){
-    $stateProvider.state('home',{
-        url:'/home',
-        templateUrl:"Home.html"
-    });
-    $stateProvider.state('menu',{
-        url:'/menu',
-        templateUrl:"Menu.html"
+app.config(function($stateProvider, $urlRouterProvider){
+    $urlRouterProvider.otherwise('/showMovies');
+    $stateProvider.state('showMovies',{
+        url:'/showMovies',
+        templateUrl:"templates/moviesView.html"
     });
 });
